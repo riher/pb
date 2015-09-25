@@ -1,7 +1,13 @@
 /**
+ * @license MIT
+ *
  * this is a class for creating progress buttons somewhat easily
  * transition times are still hardcoded which is something that one might want to externalize
+ *
+ * Copyright (c) 2015 riher
+ * Licensed under MIT (https://github.com/riher/pb/blob/master/LICENSE)
  */
+
 "use strict";
 
 /** you can edit these options */

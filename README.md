@@ -1,6 +1,7 @@
 # pb
 Simple horizontal progress button js/css library
 ###Usage
+- Include pb.js and pb.css in your HTML document
 - You create a progress button by creating a new "Pb" Object.
 
   <code>new Pb(buttonElement, percentage[, clicktrigger])</code>

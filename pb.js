@@ -1,8 +1,8 @@
-"use strict";
 /**
  * this is a class for creating progress buttons somewhat easily
  * transition times are still hardcoded which is something that one might want to externalize
  */
+"use strict";
 
 /** you can edit these options */
 var options = {
@@ -50,6 +50,7 @@ function Pb(buttonElement, percentage, clicktrigger) {
 
 /**
  * Makes the animation start but removes old ones before
+ * @public
  * @arg {float} percentage - percentage of the button that the progress bar should span _this_ time [0-1]
  */
 Pb.prototype.trigger = function(percentage) {
@@ -62,6 +63,26 @@ Pb.prototype.trigger = function(percentage) {
 	}, 10);
 };
 
+/** 
+ * Stops all progress on the button
+ * It's important to destroy all timeouts before creating new ones 
+ * @public
+ */
+Pb.prototype.stop = function() {
+	var d = this.div;
+	d.style.transition = "";
+	d.style.width = "0";
+	for (var i = 0, len = this.timeouts.length; i < len; i++) {
+		clearTimeout(this.timeouts[i]);	
+		this.timeouts.length = 0;
+	}
+};
+
+/**
+ * Adds transition effect to the button
+ * @private
+ * @arg {float} percentage - percentage of the button that the progress bar should span _this_ time [0-1]
+ */
 Pb.prototype.addTransition = function (percentage) {
 	var self = this;
 	var d = this.div;
@@ -89,14 +110,4 @@ Pb.prototype.addTransition = function (percentage) {
 	this.timeouts.push(to);
 };
 
-/* it's important to destroy all timeouts before creating new ones */
-Pb.prototype.stop = function(div) {
-	var d = this.div;
-	d.style.transition = "";
-	d.style.width = "0";
-	for (var i = 0, len = this.timeouts.length; i < len; i++) {
-		clearTimeout(this.timeouts[i]);	
-		this.timeouts.length = 0;
-	}
-};
 

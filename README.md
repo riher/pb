@@ -19,3 +19,7 @@ Simple horizontal progress button js/css library
   You can pass a different percentage value for the button for just one activation to *trigger()*.
 
 - Use the *stop()* method to stop/remove the progress bar.
+
+### Demo
+
+  For a quick demo view <code>demo.html</code>.

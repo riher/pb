@@ -1,0 +1,22 @@
+.progressbutton {
+	overflow: hidden;
+	position: relative;
+}
+.progressbutton span {
+	position: relative;
+}
+.progressbar {
+	background-color: rgba(0, 0, 0, 0.4);
+	width: 0%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.progressbar.loading {
+	width: 100%;
+}
+.content {
+	position: relative;
+	z-index: 99;
+}
